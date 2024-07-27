@@ -72,16 +72,16 @@ func main() {
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Pulumi;
-using Pulumi.Dnsimple;
+using Pulumi.DNSimple;
 
 class Program
 {
     static Task Main() =>
         Deployment.Run(() => {
-            var record = new Record("test", new RecordArgs
+            var record = new ZoneRecord("test", new RecordArgs
             {
                 Name = "test",
-                Domain = "mydomain.dev",
+                ZoneName = "mydomain.dev",
                 Type = "CNAME",
                 Value = "api.devflix.watch.herokudns.com",
             });
